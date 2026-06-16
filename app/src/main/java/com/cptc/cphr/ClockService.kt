@@ -198,13 +198,14 @@ class ClockService : AccessibilityService() {
     // —— 节点查找工具 ——
     private fun findByText(node: AccessibilityNodeInfo?, text: String): AccessibilityNodeInfo? {
         node ?: return null
-        val list = node.findAccessibilityNodeInfosByText(text)
-        return list?.firstOrNull()
+        val list: List<AccessibilityNodeInfo>? = node.findAccessibilityNodeInfosByText(text)
+        return if (list != null && list.isNotEmpty()) list[0] else null
     }
 
     private fun findClickableByText(node: AccessibilityNodeInfo?, text: String): AccessibilityNodeInfo? {
         node ?: return null
-        val list = node.findAccessibilityNodeInfosByText(text) ?: return null
+        val list: List<AccessibilityNodeInfo> =
+            node.findAccessibilityNodeInfosByText(text) ?: return null
         for (n in list) {
             var cur: AccessibilityNodeInfo? = n
             var depth = 0
@@ -214,7 +215,7 @@ class ClockService : AccessibilityService() {
                 depth++
             }
         }
-        return list.firstOrNull()
+        return if (list.isNotEmpty()) list[0] else null
     }
 
     private fun findEditable(node: AccessibilityNodeInfo?): AccessibilityNodeInfo? {
