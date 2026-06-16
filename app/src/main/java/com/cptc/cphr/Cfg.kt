@@ -7,7 +7,7 @@ object Cfg {
     private const val SP = "cphr_cfg"
 
     // —— 目标 App ——
-    var targetPkg = "com.cptc.ifuture"      // 邮政自助包名，可在设置页改
+    var targetPkg = "com.cptc.cphr"      // 邮政自助包名，可在设置页改
     // —— 界面文字（按你说的界面文字填，可改）——
     var txtWork = "工作"
     var txtCheckIn = "签到"
