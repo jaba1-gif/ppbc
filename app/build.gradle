@@ -8,7 +8,7 @@ android {
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.cptc.cphr"
+        applicationId "com.daka.helper"
         minSdk 26
         targetSdk 35
         versionCode 1
