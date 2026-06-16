@@ -80,7 +80,7 @@ class ClockService : AccessibilityService() {
     }
 
     /** 卡死检测：超时仍未完成则重启一次 */
-    private val stuckChecker = Runnable {
+    private val stuckChecker: Runnable = Runnable {
         if (currentTask != null) {
             Logger.add(this, "超时未完成，尝试重启目标App")
             if (!reEntered) {
