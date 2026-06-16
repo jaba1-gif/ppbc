@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">定点打卡得红包</string>
+    <string name="acc_label">定点打卡无障碍服务</string>
+    <string name="acc_desc">用于自动打开目标App并完成签到/签退点击操作。</string>
+</resources>
